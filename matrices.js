@@ -59,4 +59,23 @@ function matrizTriangularSuperior(N) {
 // obtengo:
 // " 1  0\n 0  1\n"
 // (o similar)
-function pintarMatrizCuadrada(matriz) {}
+function pintarMatrizCuadrada(matriz) {
+    let cadena = "<table>"
+
+    for(let fila of matriz) {
+        cadena += '<tr>'
+        for(let posicion of fila) {
+            cadena += `<td>${posicion}</td>`
+        }
+        cadena += '</tr>'
+    }
+
+    cadena += '</table>'
+    return cadena
+}
+
+const matrizPrueba = matrizTriangularSuperior(7)
+
+const principal = document.getElementById('principal')
+// principal.textContent = pintarMatrizCuadrada(matrizPrueba)
+principal.innerHTML = pintarMatrizCuadrada(matrizPrueba)
